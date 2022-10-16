@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/GA1/7DaysOfCode--mongob.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/GA1/7DaysOfCode--mongob#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^4.10.0"
   }
 }
