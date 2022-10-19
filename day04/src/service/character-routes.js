@@ -24,7 +24,6 @@ characterRoutes.post('/', async (req, res) => {
     realName, nickname, description
   }
   const result = await createCharacter(db, character)
-  console.log(result)
   if (!result.isSuccess) {
     res.status(500).send({ message: 'There was an error when creating a character'})
   } else {
