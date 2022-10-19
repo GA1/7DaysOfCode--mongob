@@ -1,19 +1,20 @@
 import { COLLECTION_NAMES } from './db-constants.js'
+import { ObjectId } from 'mongodb'
 
 export const createCharacter = async (db, dbCharacter) => {
   const result = await db
     .collection(COLLECTION_NAMES.CHARACTERS)
-    .insertOne(dbCharacter)
+    .insertOne({ ...dbCharacter })
   return {
-    id: result.id,
+    id: result.insertedId,
     isSuccess: result.acknowledged,
   }
 }
 
-export const retrieveWorkspace = async (db, characterId) => {
+export const retrieveCharacter = async (db, characterId) => {
   const result = await db
     .collection(COLLECTION_NAMES.CHARACTERS)
-    .findOne({ id: characterId })
+    .findOne({ _id: new ObjectId(characterId) })
   return result
 }
 

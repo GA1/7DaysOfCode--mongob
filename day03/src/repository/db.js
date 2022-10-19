@@ -15,6 +15,6 @@ export const connectToDatabase = async () => {
 }
 
 
-export const initializeToDatabase = async () => {
+export const initializeDatabase = async () => {
   await connectToDatabase()
 }
