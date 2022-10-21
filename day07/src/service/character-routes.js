@@ -13,7 +13,7 @@ const characterRoutes = Router()
 characterRoutes.get('/:nickname', async (req, res) => {
     const result = await retrieveCharacter(db, req.params.nickname)
     if (!result) {
-      res.status(404).send({ message: 'The character could not be found' })
+      res.status(404).send({ message: 'O personagem não foi encontrado' })
     } else {
       res.status(200).send(result)
     }
@@ -31,10 +31,10 @@ characterRoutes.post('/', async (req, res) => {
     }
     const result = await createCharacter(db, character)
     if (!result.isSuccess) {
-      res.status(500).send({ message: 'There was an error when creating a character' })
+      res.status(500).send({ message: 'Ocorreu um erro ao criar um personagem' })
     } else {
       res.status(201).send({
-        message: 'The character has been created successfully',
+        message: 'O personagem foi criado com sucesso',
         data: { ...character, _id: undefined },
       })
     }
@@ -51,9 +51,9 @@ characterRoutes.delete('/:nickname', async (req, res) => {
   let nickname = req.params.nickname
   const result = await deleteQuiz(db, nickname)
     if (!result) {
-      res.status(404).send({ message: `There are no characters with the nickname: ${nickname}` })
+      res.status(404).send({ message: `Não tem personagens com o apelido: ` })
     } else {
-      res.status(200).send({ message: `All characters with nickname: ${nickname} has been deleted` })
+      res.status(200).send({ message: `Todos os personagens com apelido: ${nickname} foram deletados` })
     }
   },
 )

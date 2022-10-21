@@ -8,7 +8,7 @@ const characterRoutes = Router()
 characterRoutes.get('/:nickname', async (req, res) => {
     const result = await retrieveCharacter(db, req.params.nickname)
     if (!result) {
-      res.status(404).send({ message: 'The character could not be found' })
+      res.status(404).send({ message: 'O personagem não foi encontrado' })
     } else {
       res.status(200).send(result)
     }
@@ -26,10 +26,10 @@ characterRoutes.post('/', async (req, res) => {
     }
     const result = await createCharacter(db, character)
     if (!result.isSuccess) {
-      res.status(500).send({ message: 'There was an error when creating a character' })
+      res.status(500).send({ message: 'Ocorreu um erro ao criar um personagem' })
     } else {
       res.status(201).send({
-        message: 'The character has been created successfully',
+        message: 'O personagem foi criado com sucesso',
         data: { ...character, _id: undefined },
       })
     }

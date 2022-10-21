@@ -13,7 +13,7 @@ const characterRoutes = Router()
 characterRoutes.get('/:nickname', async (req, res) => {
     const result = await retrieveCharacter(db, req.params.nickname)
     if (!result) {
-      res.status(404).send({ message: 'The character could not be found' })
+      res.status(404).send({ message: 'O personagem não foi encontrado' })
     } else {
       res.status(200).send(result)
     }
