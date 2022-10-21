@@ -33,3 +33,10 @@ export const deleteQuiz = async (db, nickname) => {
     .deleteMany({ nickname })
   return result.acknowledged && 1 < result.deletedCount
 }
+
+export const updateCharacter = async (db, nickname, toUpdate) => {
+  const result = await db
+    .collection(COLLECTION_NAMES.CHARACTERS)
+    .updateOne({ nickname }, { $set: toUpdate })
+  return result.acknowledged
+}

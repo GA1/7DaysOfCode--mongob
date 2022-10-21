@@ -27,7 +27,8 @@ db.characters.find()
 
 atualizar dados:
 ```
-db.characters.update({"nickname": "Spider-Man"}, {$set: {"real_name": "Kaine Parker"}})
+db.characters.update({"nickname": "Spider-Man"}, {$set: {"real_name": "Kaine
+ Parker"}})
  ```
 
 E remover dados:

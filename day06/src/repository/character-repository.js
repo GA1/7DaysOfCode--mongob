@@ -1,5 +1,4 @@
 import { COLLECTION_NAMES } from './db-constants.js'
-import { ObjectId } from 'mongodb'
 
 export const createCharacter = async (db, dbCharacter) => {
   const result = await db
