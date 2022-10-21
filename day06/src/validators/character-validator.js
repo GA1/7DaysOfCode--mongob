@@ -1,27 +1,27 @@
 export const validateCharacterBody = (characterBody) => {
   if (typeof characterBody !== 'object' || characterBody === null || !characterBody) {
-    return [false, 'Body should be a json.']
+    return [false, 'O body deve ser um json.']
   }
   if (3 < Object.keys(characterBody).length) {
-    return [false, 'The provided body has more than 3 properties, it should have only: realName, nickname, description.']
+    return [false, 'O body fornecido possui mais de 3 propriedades, devendo ter apenas: realName, nickname, description.']
   }
   if (!characterBody.realName) {
-    return [false, 'The provided body is missing realName.']
+    return [false, 'Falta o realname no body fornecido.']
   }
   if (!characterBody.nickname) {
-    return [false, 'The provided body is missing nickname.']
+    return [false, 'Falta o nickname no body fornecido.']
   }
   if (!characterBody.description) {
-    return [false, 'The provided body is missing description.']
+    return [false, 'Falta o description no body fornecido.']
   }
   if (typeof characterBody.realName !== 'string') {
-    return [false, 'realName should be a string.']
+    return [false, 'realName deve ser uma string.']
   }
   if (typeof characterBody.nickname !== 'string') {
-    return [false, 'nickname should be a string.']
+    return [false, 'nickname deve ser uma string.']
   }
   if (typeof characterBody.description !== 'string') {
-    return [false, 'description should be a string.']
+    return [false, 'description deve ser uma string.']
   }
   return [true, null]
 }

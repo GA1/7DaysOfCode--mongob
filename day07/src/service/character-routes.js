@@ -6,7 +6,7 @@ import {
   retrieveAllCharacters,
   retrieveCharacter,
 } from '../repository/character-repository.js'
-import { validateCharacterBody } from '../valiators/character-validator.js'
+import { validateCharacterBody } from '../validators/character-validator.js'
 
 const characterRoutes = Router()
 

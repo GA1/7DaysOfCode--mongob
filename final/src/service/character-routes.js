@@ -6,7 +6,7 @@ import {
   retrieveAllCharacters,
   retrieveCharacter, updateCharacter,
 } from '../repository/character-repository.js'
-import { validatePostCharacterBody, validatePutCharacterBody } from '../valiators/character-validator.js'
+import { validatePostCharacterBody, validatePutCharacterBody } from '../validators/character-validator.js'
 
 const characterRoutes = Router()
 
@@ -31,10 +31,10 @@ characterRoutes.post('/', async (req, res) => {
     }
     const result = await createCharacter(db, character)
     if (!result.isSuccess) {
-      res.status(500).send({ message: 'There was an error when creating a character' })
+      res.status(500).send({ message: 'Ocorreu um erro ao criar um personagem' })
     } else {
       res.status(201).send({
-        message: 'The character has been created successfully',
+        message: 'O personagem foi criado com sucesso',
         data: { ...character, _id: undefined },
       })
     }
@@ -51,9 +51,9 @@ characterRoutes.delete('/:nickname', async (req, res) => {
   let nickname = req.params.nickname
   const result = await deleteQuiz(db, nickname)
     if (!result) {
-      res.status(404).send({ message: `There are no characters with the nickname: ${nickname}` })
+      res.status(404).send({ message: `Não tem personagens com o apelido: ${nickname}` })
     } else {
-      res.status(200).send({ message: `All characters with nickname: ${nickname} has been deleted` })
+      res.status(200).send({ message: `Todos os personagens com apelido: ${nickname} foram deletados` })
     }
   },
 )
@@ -67,14 +67,14 @@ characterRoutes.put('/:nickname', async (req, res) => {
     const foundCharacter = await retrieveCharacter(db, nickname)
     const toUpdate = req.body
     if (!foundCharacter) {
-      res.status(404).send({ message: `There are no characters with the nickname: ${nickname}` })
+      res.status(404).send({ message: `Não tem personagens com o apelido: ${nickname}` })
     } else {
       const wasSuccess = await updateCharacter(db, nickname, toUpdate)
       if (!wasSuccess) {
-        res.status(500).send({ message: 'There was an error when updating a character' })
+        res.status(500).send({ message: 'Ocorreu um erro ao atualizar um personagem' })
       } else {
         res.status(200).send({
-          message: 'The character has been updated successfully',
+          message: 'O personagem foi atualizado com sucesso',
           data: { ...foundCharacter, ...toUpdate},
         })
       }

@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"realName\": \"Peter parker\",\n    \"description\": \"As an orphaned child, Peter was raised by his Uncle Ben and Aunt May. At a science expo, Peter was bitten by an errant radioactive spider which granted him an array of arachnid powers.\",\n    \"nickname\": \"Spider-Man\"\n}",
+					"raw": "{\n    \"realName\": \"Peter parker\",\n    \"description\": \"Como uma criança órfã, Peter foi criado por seu tio Ben e tia May. Em uma exposição de ciências, Peter foi mordido por uma aranha radioativa errante que lhe concedeu uma série de poderes de aracnídeo.\",\n    \"nickname\": \"Homem-Aranha\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -129,7 +129,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"realName\": \"Miles Morales\"\n}",
+					"raw": "{\n    \"realName\": \"Miles Morales\",\n    \"nickname\": \"Cabeça de teia\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,14 +137,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/characters/Spider-Man",
+					"raw": "localhost:3000/characters/Homem-Aranha",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"characters",
-						"Spider-Man"
+						"Homem-Aranha"
 					]
 				}
 			},
