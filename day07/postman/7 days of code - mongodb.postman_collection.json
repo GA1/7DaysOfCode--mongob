@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"realName\": \"Peter parker\",\n    \"description\": \"As an orphaned child, Peter was raised by his Uncle Ben and Aunt May. At a science expo, Peter was bitten by an errant radioactive spider which granted him an array of arachnid powers.\",\n    \"nickname\": \"Spider-Man\"\n}",
+					"raw": "{\n    \"realName\": \"Peter parker\",\n    \"description\": \"Como uma criança órfã, Peter foi criado por seu tio Ben e tia May. Em uma exposição de ciências, Peter foi mordido por uma aranha radioativa errante que lhe concedeu uma série de poderes de aracnídeo.\",\n    \"nickname\": \"Homem-Aranha\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -34,6 +34,37 @@
 			"response": []
 		},
 		{
+			"name": "character",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/characters/Spider-Man",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters",
+						"Spider-Man"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "characters",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -43,7 +74,34 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"realName\": \"Peter parker\",\n    \"description\": \"As an orphaned child, Peter was raised by his Uncle Ben and Aunt May. At a science expo, Peter was bitten by an errant radioactive spider which granted him an array of arachnid powers.\",\n    \"nickname\": \"Spider-Man\"\n}",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/characters",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "character",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
